@@ -1,0 +1,91 @@
+/* General Container Styling */
+.shop-details-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Shop Header */
+  .shop-header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .shop-address, .shop-header p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Services Section */
+  .services-section {
+    margin-top: 30px;
+  }
+  
+  .services-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+  }
+  
+  .service-card {
+    background: #fff;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .service-card .description {
+    margin: 10px 0;
+    color: #555;
+    font-size: 1em;
+  }
+  
+  .service-card .cost {
+    font-size: 1.1em;
+    color: #28a745;
+  }
+  
+  /* Back Button */
+  .back-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Loading State */
+  .loading {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .loading p {
+    font-size: 1.2em;
+    color: #666;
+  }
+  

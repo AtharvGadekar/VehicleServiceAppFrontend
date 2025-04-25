@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+label {
+    font-weight: bold;
+}
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+.address-list {
+    margin-top: 30px;
+}
+.address-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #4CAF50;
+}
+.address-item h3 {
+    margin: 0;
+}
+.address-item p {
+    margin: 5px 0;
+}
+.address-item button {
+    background-color: #f44336;
+    margin-top: 10px;
+}
+.address-item button:hover {
+    background-color: #e53935;
+}
+.address-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 10px;
+    /* width: 500px; */
+    background: #f9f9f9;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #555;
+  }
+  

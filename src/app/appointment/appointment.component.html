@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Service Appointments</title>
+    <style>
+    </style>
+</head>
+<body>
+    <app-navbar></app-navbar>
+
+    <!-- Navigation Bar -->
+    <!-- <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Appointments</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav> -->
+
+    <!-- Car Service Appointments Section -->
+    <div class="container">
+        <h2>Your Car Service Appointments</h2>
+        <div class="appointment-container">
+            <h2>Appointments</h2>
+          
+            <div *ngIf="data && data.length > 0; else noAppointments">
+              <div *ngFor="let appointment of data; let i = index" class="appointment-card">
+                
+                <!-- Initially Visible Details -->
+                <h3>Appointment #{{ appointment.aid }}</h3>
+                <p><strong>Date & Time:</strong> {{ appointment.dateAndTime }}</p>
+                <p><strong>Shop Name:</strong> {{ appointment.shop.shopname }}</p>
+          
+                <!-- Toggle Button to Expand More Details -->
+                <button class="toggle-btn" (click)="toggleDetails(i)">
+                  {{ expandedIndexes[i] ? 'Hide Details' : 'See More' }}
+                </button>
+          
+                <!-- Expandable Section -->
+                <div *ngIf="expandedIndexes[i]" class="expanded-section">
+                  
+                  <!-- Customer Information -->
+                  <div class="section">
+                    <h4>Customer Details</h4>
+                    <p><strong>Name:</strong> {{ appointment.customer.name }}</p>
+                    <p><strong>Email:</strong> {{ appointment.customer.email }}</p>
+                    <p><strong>Contact:</strong> {{ appointment.customer.cmobno }}</p>
+                    <p><strong>Address:</strong> {{ appointment.customer.caddress.address }}, 
+                      {{ appointment.customer.caddress.areaname }}, 
+                      {{ appointment.customer.caddress.city }} - 
+                      {{ appointment.customer.caddress.pincode }}
+                    </p>
+                  </div>
+          
+                  <!-- Vehicle Details -->
+                  <div class="section">
+                    <h4>Vehicle Details</h4>
+                    <p><strong>Model:</strong> {{ appointment.vehicle.vmodel }}</p>
+                    <p><strong>Make:</strong> {{ appointment.vehicle.vmake }}</p>
+                    <p><strong>Year:</strong> {{ appointment.vehicle.vyear }}</p>
+                    <p><strong>License Plate:</strong> {{ appointment.vehicle.vlicenseplate }}</p>
+                  </div>
+          
+                  <!-- Services List -->
+                  <div class="section">
+                    <h4>Services</h4>
+                    <ul>
+                      <li *ngFor="let service of appointment.services">
+                        <strong>{{ service.sname }}</strong>: {{ service.sdescription }} - ₹{{ service.scost }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!-- No Appointments Message -->
+            <ng-template #noAppointments>
+              <p>No appointments available.</p>
+            </ng-template>
+          </div>
+
+        <div class="appointment-list" id="appointmentList">
+            <!-- Appointment items will be dynamically added here -->
+            <div *ngFor="let appointment of data">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        // Placeholder array to store appointments
+        const appointments = [
+            {
+                date: "2024-10-20",
+                time: "10:00 AM",
+                service: "Oil Change",
+                shop: "John's Auto Repair"
+            },
+            {
+                date: "2024-10-25",
+                time: "2:00 PM",
+                service: "Brake Repair",
+                shop: "Fast Fix Garage"
+            },
+            {
+                date: "2024-11-05",
+                time: "9:00 AM",
+                service: "Tire Rotation",
+                shop: "Auto Care Center"
+            }
+        ];
+
+        // Function to display appointments
+        function displayAppointments() {
+            const appointmentList = document.getElementById("appointmentList");
+
+            appointments.forEach((appointment, index) => {
+                const appointmentItem = document.createElement("div");
+                appointmentItem.className = "appointment-item";
+                appointmentItem.innerHTML = `
+                    <h3>${appointment.service}</h3>
+                    <p>Date: ${appointment.date}</p>
+                    <p>Time: ${appointment.time}</p>
+                    <p>Shop: ${appointment.shop}</p>
+                    <button onclick="cancelAppointment(${index})">Cancel Appointment</button>
+                `;
+                appointmentList.appendChild(appointmentItem);
+            });
+        }
+
+        // Function to cancel an appointment
+        function cancelAppointment(index) {
+            if (confirm("Are you sure you want to cancel this appointment?")) {
+                appointments.splice(index, 1);  // Remove the appointment from the array
+                updateAppointmentList();  // Update the displayed list
+            }
+        }
+
+        // Function to update the appointment list after cancellation
+        function updateAppointmentList() {
+            const appointmentList = document.getElementById("appointmentList");
+            appointmentList.innerHTML = "";  // Clear the current list
+            displayAppointments();  // Redisplay the updated list
+        }
+
+        // Initial call to display appointments on page load
+        displayAppointments();
+    </script> -->
+
+</body>
+</html>

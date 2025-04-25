@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Show Home Address</title>
+    <style>
+    </style>
+</head>
+<body>
+    <app-navbar></app-navbar>
+    <!-- Navigation Bar -->
+    <!-- <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Add Address</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav> -->
+
+
+    
+
+    <!-- Add Address Form -->
+    <div class="container">
+
+        <!-- Address List Display -->
+    <div *ngIf="customer" class="address-list" id="addressList">
+        <h2>Your Saved Addresses</h2>
+        <!-- Address items will be dynamically added here -->
+        <div class="address-card" *ngFor="let d of data;let i=index">
+            <h2>Address Details {{i+1}}</h2>
+            <p><strong>Address:</strong> {{ d.address }}</p>
+            <p><strong>Area:</strong> {{ d.areaname }}</p>
+            <p><strong>City:</strong> {{ d.city }}</p>
+            <p><strong>Pincode:</strong> {{ d.pincode }}</p>
+          </div>
+    </div>
+    <br>
+
+        <h2>Add Your Home Address</h2>
+
+        <form id="addressForm" (submit)="onSubmit()">
+            <label for="street">Address</label>
+            <input type="text" [(ngModel)]="custadd.address" id="addressline1" name="addressline1" placeholder="Enter House no/Flat no, building name and society name" required>
+            
+            <label for="state">Area</label>
+            <input type="text" [(ngModel)]="custadd.areaname" id="addressline2" name="addressline2" placeholder="Enter Areaname and landmark" required>
+
+            <label for="city">City</label>
+            <input type="text" [(ngModel)]="custadd.city" id="city" name="city" placeholder="Enter city name" required>
+
+            <label for="zip">ZIP Code</label>
+            <input type="text" [(ngModel)]="custadd.pincode" id="zip" name="zip" placeholder="Enter ZIP code/pincode" required>
+
+            <button type="submit">Add Address</button>
+        </form>
+
+        
+    </div>
+
+
+</body>
+</html>

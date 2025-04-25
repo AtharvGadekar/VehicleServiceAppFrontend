@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div *ngIf="customer" class="dashboard-container">
+    <h1>Welcome, {{ customer?.name }}</h1>
+  
+    <!-- Customer Details -->
+    <div class="customer-details">
+      <h2>Customer Information</h2>
+      <p><strong>Email:</strong> {{ customer.cemail }}</p>
+      <p><strong>Mobile No:</strong> {{ customer.cmobno }}</p>
+      <p><strong>Password:</strong> {{ customer.cpassword }}</p>
+    </div>
+  
+    <!-- Address Information -->
+    <div *ngIf="customer.cAddress.length > 0; else noAddress">
+        <div class="customer-address" *ngFor="let d of data;let i=index">
+          <h2>Address {{i+1}}</h2>
+          <p><strong>Address:</strong> {{ d.address }}</p>
+          <p><strong>Area:</strong> {{ d.areaname }}</p>
+          <p><strong>City:</strong> {{ d.city }}</p>
+          <p><strong>Pincode:</strong> {{ d.pincode }}</p>
+        
+      </div>
+    </div>
+    <ng-template #noAddress>
+      <p>No addresses found.</p>
+      <a href="/address">Add Address</a>
+    </ng-template>
+    
+  
+    <!-- Vehicle Information -->
+    <div class="customer-vehicles">
+      <h2>Vehicles</h2>
+      <div *ngFor="let vehicle of vehicles">
+        <p><strong>Vehicle Model:</strong> {{ vehicle.vmodel }}</p>
+        <p><strong>License Plate:</strong> {{ vehicle.vlicenseplate }}</p>
+        <p><strong>Make:</strong> {{ vehicle.vmake }}</p>
+        <p><strong>Year:</strong> {{ vehicle.vyear }}</p>
+        <p><strong>VIN:</strong> {{ vehicle.vin }}</p>
+        <hr />
+      </div>
+    </div>
+    
+  </div>
+  

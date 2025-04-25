@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Services</title>
+    <style>
+    </style>
+</head>
+<body>
+    <app-navbar></app-navbar>
+
+    <!-- Navigation Bar -->
+    <!-- <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Find Services</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav> -->
+
+    <!-- Service Finder Section -->
+    <div class="container">
+        <h2>Find Vehicle Services</h2>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="serviceSearch" placeholder="Enter service type (e.g., Oil Change)">
+            <button type="button" onclick="searchServices()">Search</button>
+        </div>
+
+        <!-- Service List -->
+        <div class="service-list" id="serviceList">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <h3>Oil Change</h3>
+                <p>Quick and affordable oil change service to keep your engine running smoothly.</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card">
+                <h3>Brake Repair</h3>
+                <p>Professional brake repair services to ensure your safety on the road.</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <h3>Tire Rotation</h3>
+                <p>Prolong the life of your tires with our reliable tire rotation services.</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card">
+                <h3>Wheel Alignment</h3>
+                <p>Get precise wheel alignment for smoother handling and reduced tire wear.</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <!-- Service Card 5 -->
+            <div class="service-card">
+                <h3>Car Wash</h3>
+                <p>Full-service car wash to keep your vehicle clean inside and out.</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <!-- Service Card 6 -->
+            <div class="service-card">
+                <h3>Battery Replacement</h3>
+                <p>Reliable battery replacement services for trouble-free starts.</p>
+                <a href="#">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Placeholder function for searching services
+        function searchServices() {
+            const searchInput = document.getElementById("serviceSearch").value.toLowerCase();
+            const serviceCards = document.getElementsByClassName("service-card");
+
+            for (let i = 0; i < serviceCards.length; i++) {
+                const serviceName = serviceCards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                const serviceDescription = serviceCards[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+                if (serviceName.includes(searchInput) || serviceDescription.includes(searchInput)) {
+                    serviceCards[i].style.display = "block";
+                } else {
+                    serviceCards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

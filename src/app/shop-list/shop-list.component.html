@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Shops</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+    <!-- Navigation Bar -->
+    <!-- <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Find Shops</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav> -->
+
+    <!-- Shop Finder Section -->
+    <div class="container">
+        <h2>Find a Shop Near You</h2>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search" [(ngModel)]="searchText" placeholder="Enter city or shop name">
+            <button type="button" (click)="searchShops()">Search</button>
+        </div>
+
+        <!-- Shop List -->
+        <div class="shop-list" id="shopList">
+            <!-- Shop Card 1 -->
+            <!-- <div class="shop-card">
+                <h3>John's Auto Repair</h3>
+                <p>Address: 123 Main St, Springfield</p>
+                <p>Contact: +1-555-123-4567</p>
+                <a href="#">View Details</a>
+            </div>
+
+            <div class="shop-card">
+                <h3>Fast Fix Garage</h3>
+                <p>Address: 456 Elm St, Greenville</p>
+                <p>Contact: +1-555-987-6543</p>
+                <a href="#">View Details</a>
+            </div> -->
+
+            <!-- Shop Card 3 -->
+            <!-- <div class="shop-card">
+                <h3>Auto Care Center</h3>
+                <p>Address: 789 Maple St, Centerville</p>
+                <p>Contact: +1-555-555-7890</p>
+                <a href="#">View Details</a>
+            </div> -->
+
+            
+            <div class="shop-card" *ngFor="let d of filteredData | slice:0:12">
+                <h3>{{d.shopname}}</h3>
+                <p>Address: {{d.shopaddress.shopAddress}}, {{d.shopaddress.city}}, {{d.shopaddress.pincode}}.</p>
+                <p>Contact: {{d.contactno}}</p>
+                <a [routerLink]="['/shop', d.id]">View Details</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- <script>
+        // Placeholder function for searching shops
+        function searchShops() {
+            const searchInput = document.getElementById("shopSearch").value.toLowerCase();
+            const shopCards = document.getElementsByClassName("shop-card");
+
+            for (let i = 0; i < shopCards.length; i++) {
+                const shopName = shopCards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                const shopAddress = shopCards[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+                if (shopName.includes(searchInput) || shopAddress.includes(searchInput)) {
+                    shopCards[i].style.display = "block";
+                } else {
+                    shopCards[i].style.display = "none";
+                }
+            }
+        }
+    </script> -->
+
+</body>
+</html>

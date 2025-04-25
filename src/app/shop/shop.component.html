@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div *ngIf="shop" class="shop-details-container">
+    <div class="shop-header">
+      <h1>{{ shop.shopname }}</h1>
+      <p>
+        <strong>Description:</strong> {{shop.shopdescription}},
+      </p>
+      <p class="shop-address">
+        <strong>Address:</strong> {{ shop.shopaddress.shopAddress }}, 
+        {{ shop.shopaddress.city }} - {{ shop.shopaddress.pincode }}
+      </p>
+      <p><strong>Contact:</strong> {{ shop.contactno }}</p>
+    </div>
+  
+    <div class="services-section">
+      <h2>Available Services</h2>
+      <div class="service-card" *ngFor="let service of shop.services; let i = index">
+        <h3>{{ i + 1 }}. {{ service.sname }}</h3>
+        <p class="description">{{ service.sdescription }}</p>
+        <p class="cost"><strong>Cost:</strong> ₹{{ service.scost }}</p>
+      </div>
+    </div>
+  
+    <a routerLink="/shops" class="back-button">Back to Shop List</a>
+    <a routerLink="/shops" class="back-button">Book appointment</a>
+  </div>
+  
+  <div *ngIf="!shop" class="loading">
+    <p>Loading shop details...</p>
+  </div>
+  

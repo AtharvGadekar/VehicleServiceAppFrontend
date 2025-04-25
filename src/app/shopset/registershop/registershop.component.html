@@ -1,0 +1,19 @@
+<app-shopnavbar></app-shopnavbar>
+<div class="container">
+    <h2>Registration Form</h2>
+    <form action="/submit_registration" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required placeholder="1234567890">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
